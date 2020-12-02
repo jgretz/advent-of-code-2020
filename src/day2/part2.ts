@@ -1,17 +1,17 @@
-import INPUT from './input';
+import {pipe} from 'ramda';
+
+import {Password} from './Password';
+
+import parseInput from './parseInput';
+import parsePasswords from './parsePasswords';
+import filterPasswordsBy from './filterPasswordsBy';
+import display from './display';
 
 // test
-const passwordPattern = /([0-9]+)-([0-9]+) ([a-z]+): ([a-z]+)/;
-
-const isLineValid = (line: string): boolean => {
-  const [, index1Char, index2Char, reqChar, pswd] = line.match(passwordPattern);
-
-  // adjust to 0 base indexing
-  const index1 = parseInt(index1Char, 10) - 1;
-  const index2 = parseInt(index2Char, 10) - 1;
-
-  const char1 = pswd.charAt(index1);
-  const char2 = pswd.charAt(index2);
+const test = ({number1, number2, term, password}: Password) => {
+  // need to adjust from 1 to 0 based index
+  const char1 = password.charAt(number1 - 1);
+  const char2 = password.charAt(number2 - 1);
 
   // implicitly false because a valid password cant have both positions
   if (char1 === char2) {
@@ -19,11 +19,8 @@ const isLineValid = (line: string): boolean => {
   }
 
   // does either equal
-  return char1 === reqChar || char2 === reqChar;
+  return char1 === term || char2 === term;
 };
 
 // run
-const lines = INPUT.split('\n');
-const validLines = lines.filter(isLineValid);
-
-console.log(`${validLines.length} passwords are valid out of ${lines.length}.`);
+pipe(parseInput, parsePasswords, filterPasswordsBy(test), display)();

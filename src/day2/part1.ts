@@ -1,22 +1,19 @@
-import INPUT from './input';
+import {pipe} from 'ramda';
+
+import {Password} from './Password';
+
+import parseInput from './parseInput';
+import parsePasswords from './parsePasswords';
+import filterToValidPasswords from './filterPasswordsBy';
+import display from './display';
 
 // test
-const passwordPattern = /([0-9]+)-([0-9]+) ([a-z]+): ([a-z]+)/;
+const test = ({number1, number2, term, password}: Password) => {
+  const occurencesPattern = new RegExp(term, 'g');
+  const occurences = (password.match(occurencesPattern) || []).length;
 
-const isLineValid = (line: string): boolean => {
-  const [, minChar, maxChar, character, pswd] = line.match(passwordPattern);
-
-  const occurencesPattern = new RegExp(character, 'g');
-  const occurences = (pswd.match(occurencesPattern) || []).length;
-
-  const min = parseInt(minChar, 10);
-  const max = parseInt(maxChar, 10);
-
-  return occurences >= min && occurences <= max;
+  return occurences >= number1 && occurences <= number2;
 };
 
 // run
-const lines = INPUT.split('\n');
-const validLines = lines.filter(isLineValid);
-
-console.log(`${validLines.length} passwords are valid out of ${lines.length}.`);
+pipe(parseInput, parsePasswords, filterToValidPasswords(test), display)();
