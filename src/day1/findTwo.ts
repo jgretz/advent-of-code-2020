@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-plusplus */
 import INPUT from './input';
 
 INPUT.sort((x, y) => x - y);
