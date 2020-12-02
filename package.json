@@ -3,10 +3,10 @@
   "author": "jgretz",
   "license": "MIT",
   "scripts": {
-    "day1.1": "ts-node ./src/day1/part1/report.ts",
-    "day1.2": "ts-node ./src/day1/part2/report.ts",
-    "day2.1": "ts-node ./src/day2/part1/report.ts",
-    "day2.2": "ts-node ./src/day2/part2/report.ts"
+    "day1.1": "ts-node ./src/day1/part1.ts",
+    "day1.2": "ts-node ./src/day1/part2.ts",
+    "day2.1": "ts-node ./src/day2/part1.ts",
+    "day2.2": "ts-node ./src/day2/part2.ts"
   },
   "dependencies": {
     "prettier": "^2.2.1",
