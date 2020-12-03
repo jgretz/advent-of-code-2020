@@ -6,3 +6,6 @@ Solved with a little bit of "smarts" but really a brute force given the size of 
 
 ## Day 2
 Solved with a little regex and implementation of the required logic
+
+## Day 3
+Solved by mapping into a matrix and a little traversal logic. Debated pure mapping, but figured a loop was sufficient.
