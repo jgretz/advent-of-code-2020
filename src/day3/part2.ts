@@ -1,9 +1,4 @@
-import {pipe} from 'ramda';
-
-import parseInput from './parseInput';
-import hydrateMatrix from './hydrateMatrix';
-import countTreesForSteps from './countTreesForSteps';
-import display from './display';
+import evaluateSteps from './evaluateSteps';
 
 const steps = [
   {x: 1, y: 1},
@@ -13,4 +8,4 @@ const steps = [
   {x: 1, y: 2},
 ];
 
-pipe(parseInput, hydrateMatrix, countTreesForSteps(steps), display)();
+evaluateSteps(steps);
