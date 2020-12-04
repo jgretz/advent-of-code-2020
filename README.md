@@ -9,3 +9,6 @@ Solved with a little regex and implementation of the required logic
 
 ## Day 3
 Solved by mapping into a matrix and a little traversal logic. Debated pure mapping, but figured a loop was sufficient.
+
+## Day 4
+Solved by making a simple rule eval engine and then defining the rules per the spec.

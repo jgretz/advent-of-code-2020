@@ -22,8 +22,10 @@ module.exports = {
     "import/prefer-default-export": 0,
     "no-useless-constructor": 0,
     "class-methods-use-this": 0,
+    
     "no-console": 0,
     "no-plusplus": 0,
+    "no-continue": 0,
 
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
