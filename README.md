@@ -12,3 +12,6 @@ Solved by mapping into a matrix and a little traversal logic. Debated pure mappi
 
 ## Day 4
 Solved by making a simple rule eval engine and then defining the rules per the spec.
+
+## Day 5
+Solved by pretty basic parse and logic. Nothing too fancy.
