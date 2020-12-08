@@ -20,4 +20,7 @@ Solved by pretty basic parse and logic. Nothing too fancy.
 Solved the first part by using a Set. Solved the second part by using an intersection.
 
 # Day 7
-Solved using recursion and basic tree structure. This
+Solved using recursion and basic tree structure.
+
+# Day 8
+Solved by writing an execution context and some brute force.
