@@ -24,3 +24,6 @@ Solved using recursion and basic tree structure.
 
 # Day 8
 Solved by writing an execution context and some brute force.
+
+# Day 9
+Solved by some basic loops and logic. Nothing too fancy.
